@@ -1,0 +1,14 @@
+# base image is python 3.11 "slim"
+# slim is lightweight version of docker
+FROM python:3.11-slim
+
+# working director
+WORKDIR /app
+
+# copy everything from this dir (".") to the "app" dir - Linux 101 
+COPY . /app
+
+RUN pip install pymongo
+
+# Expose (to the outside world) port of the server
+EXPOSE 3306
