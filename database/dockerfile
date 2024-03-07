@@ -2,6 +2,9 @@
 # slim is lightweight version of docker
 FROM python:3.11-slim
 
+# MAINTAINER Tag (Deprecated, replaced with LABEL)
+LABEL Franz Luiz Sy <fsy1@myseneca.ca>
+
 # working director
 WORKDIR /app
 
@@ -12,3 +15,9 @@ RUN pip install pymongo
 
 # Expose (to the outside world) port of the server
 EXPOSE 3306
+
+# ENV Variables
+# TODO
+
+# run server
+CMD ["python", "server.py"]
