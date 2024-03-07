@@ -10,10 +10,10 @@ Franz Luiz Sy
 A place for users to store, edit, and retrieve health related information 
 
 ## Target Features
-Security - user authentication and permissions
-Scalability - data storage can accommodate increasing data size
-Maintainable - simple code implementation to keep maintenance simple and easy
-Accessibility - user friendly, user centered
+Security - user authentication and permissions <br />
+Scalability - data storage can accommodate increasing data size <br />
+Maintainable - simple code implementation to keep maintenance simple and easy <br />
+Accessibility - user friendly, user centered <br />
 Cloud based - wider user reach, both consumer and developer. Containerized for maximum compatibility, benefiting maintainability.
 
 ## Repository Guide
