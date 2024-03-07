@@ -22,12 +22,12 @@ def mongoConnection():
         instantiated pymongo object to be used by the server
     """
 
-    mongoHost = 'localhost'
+    mongoHost = "127.0.0.1"
     mongoPort = 27017
 
     client = MongoClient(mongoHost, mongoPort)
-    db = client['PHRDatabase']
-    collection = db['userCollections']
+    db = client['PHR']
+    collection = db['users']
 
     try:
         client.admin.command('ping')

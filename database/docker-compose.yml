@@ -1,18 +1,14 @@
-version: '3.9'
+version: "3.9" 
+
 services:
-  myapplication:
-    image: mongodb/mongodb-community-server:6.0-ubi8
-    environment:
-      - CONN_STR=mongodb://user:pass@mongodb
-    command: '/bin/bash -c "sleep 5; mongosh $$CONN_STR --eval \"show dbs;\""'
-    depends_on:
-      - mongodb
-  mongodb:
-    image: mongodb/mongodb-community-server:6.0-ubi8
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=rootUser
-      - MONGO_INITDB_ROOT_PASSWORD=rootPass1234
-    volumes:
-      - type: bind
-        source: ./data
-        target: /data/db
+  py-mongo:
+    build:
+      context: .
+      volumes:
+        - $pwd/mongo-data:/data/db
+        - $pwd/mongo-app:/var/www/html
+      ports:
+          - "27017:27017"
+      environment:
+        MONGODB_URI: mongodb+srv://fsy1:useruser123@senecaweb.oca2zfr.mongodb.net/?retryWrites=true&w=majority/PHRDatabase
+        
