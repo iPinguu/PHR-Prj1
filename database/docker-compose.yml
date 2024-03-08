@@ -1,14 +1,14 @@
-version: "3.9" 
+version: '3.8'
 
 services:
-  py-mongo:
-    build:
-      context: .
-      volumes:
-        - $pwd/mongo-data:/data/db
-        - $pwd/mongo-app:/var/www/html
-      ports:
-          - "27017:27017"
-      environment:
-        MONGODB_URI: mongodb+srv://fsy1:useruser123@senecaweb.oca2zfr.mongodb.net/?retryWrites=true&w=majority/PHRDatabase
-        
+  mongodb:
+    image: mongo
+    container_name: my-mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
